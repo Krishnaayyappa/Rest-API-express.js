@@ -3,9 +3,13 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const eventRoutes = require('./routes/events');
 const authRoutes = require('./routes/auth');
+const path = require('path')
 
 const app = express();
 
+const publicpath = path.join(__dirname, "./public");
+
+app.use(express.static(publicpath));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -29,6 +33,10 @@ app.use((req, res, next) => {
 //   const data = await collection.find({}).toArray();
 //   res.send(data);
 // })
+
+app.get("/", (req, res) => {
+  res.render("index.html")
+})
 
 app.use(authRoutes);
 
