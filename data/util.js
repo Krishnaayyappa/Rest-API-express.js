@@ -2,7 +2,7 @@ const fs = require('node:fs/promises');
 const {MongoClient, ObjectId} = require("mongodb")
 
 
-const url = "mongodb+srv://Admin-krishna:meLLS71nIx56axTI@cluster0.yaob0.mongodb.net/?retryWrites=true&w=majority"
+const url = "mongodb+srv://Admin-krishna:iLsNz2spE22NOu2b@cluster0.yaob0.mongodb.net/?retryWrites=true&w=majority"
 const client = new MongoClient(url)
 
 async function readData(email) {

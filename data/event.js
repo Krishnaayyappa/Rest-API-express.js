@@ -4,7 +4,7 @@ const { readData, writeData } = require('./util');
 const {MongoClient, ObjectId} = require("mongodb")
 
 
-const url = "mongodb+srv://Admin-krishna:meLLS71nIx56axTI@cluster0.yaob0.mongodb.net/?retryWrites=true&w=majority"
+const url = "mongodb+srv://Admin-krishna:iLsNz2spE22NOu2b@cluster0.yaob0.mongodb.net/?retryWrites=true&w=majority"
 const client = new MongoClient(url)
 
 // async function connect(){
@@ -20,10 +20,14 @@ async function getAll() {
   //   throw new NotFoundError('Could not find any events.');
   // }
   // return storedData.events;
+  
   client.connect();
   const db = client.db("Events")
+  console.log("test3")
   const collection = db.collection("Events")
+  console.log("test4")
   const data = await collection.find({}).toArray();
+  console.log("test5")
   return data;
 }
 

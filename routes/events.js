@@ -14,6 +14,7 @@ router.get('/', async (req, res, next) => {
   try {
     console.log("123")
     const events = await getAll();
+    console.log("456")
     res.json({ events: events });
   } catch (error) {
     next(error);
