@@ -10,7 +10,7 @@ const {
 
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
+router.get('/events', async (req, res, next) => {
   try {
     console.log("123")
     const events = await getAll();
